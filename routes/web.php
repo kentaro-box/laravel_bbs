@@ -23,3 +23,5 @@ Route::get('/logout', function(){
     Auth::logout();
     return redirect('/');
 });
+
+Route::get('post','BbsController@post');

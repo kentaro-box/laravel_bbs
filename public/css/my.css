@@ -1,0 +1,34 @@
+/* 0. layout            */
+/* 1. index.blade.php   */
+/* 2. post.blade.php    */
+
+/* 0. layout            */
+.panel-default>.panel-heading {
+   
+    font-weight: bold;
+    font-size: 24px;
+}
+/* 1. index.blade.php   */
+p.post { 
+    text-align: right;
+}
+
+/* 2. post.blade.php    */
+.post-form input[type="text"] {
+    width: 100%;
+    margin: 0 0 8px 0;
+}
+.post-form input[type="textarea"] {
+    height: 160px;
+    width: 100%;
+    margin: 0 0 8px 0;
+}
+.post-form input[type="file"] {
+    margin: 0 0 8px 0;
+    line-height: 0px;
+}
+.submit {
+    margin: 16px 0 0 0;
+    text-align: right;
+    
+}
