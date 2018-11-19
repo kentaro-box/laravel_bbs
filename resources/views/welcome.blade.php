@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Bulletin Board System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -14,13 +14,44 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #0b6998;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
-                margin: 0;
-            }
+                width: 100%;
+                margin: 0 auto;
 
+            }
+            body {
+                display: block;
+                width: 360px;
+                margin: 0 auto;
+            }
+            a {
+                text-decoration: none;
+                color: #ad0101;
+                padding: 0 10px;
+                font-size: 1.2em;
+                display: inline-block;
+
+            }
+            a:hover {
+                transition: 0.5s;
+                color: #e20404;
+                -webkit-animation: zoom .3s;
+                animation: zoom .3s;
+                
+            }
+            @keyframes zoom {
+            50% {
+                transform: scale(1.05);
+            }
+            }
+            @-webkit-keyframes zoom {
+            50% {
+                -webkit-transform: scale(1.05);
+            }
+            }
             .full-height {
                 height: 100vh;
             }
@@ -43,6 +74,12 @@
 
             .content {
                 text-align: center;
+                width: 100%;
+                margin: 0 auto;
+                vertical-align: middle;
+                height: 100vh;
+                display: table-cell;
+                max-width: 360px;
             }
 
             .title {
@@ -61,35 +98,25 @@
 
             .m-b-md {
                 margin-bottom: 30px;
+                margin-left: 8px;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                Bulletin Board System
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a> or 
+                        <a href="/logout"> Logout</a>
+                    @else
+                        <a href="{{ route('login') }}">Login</a> or 
+                        <a href="{{ route('register') }}">Register</a>
+                    @endauth
+            @endif
+                
             </div>
-        </div>
     </body>
 </html>
