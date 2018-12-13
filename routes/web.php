@@ -25,3 +25,10 @@ Route::get('/logout', function(){
 });
 
 Route::get('post','BbsController@post');
+
+Route::post('store','BbsController@store');
+
+Route::get('/delete/{id}','BbsController@delete')->name('delete');
+
+Route::get('/preview/{post}','BbsController@preview')->name('preview');
+Route::post('/update/{id}','BbsController@update')->name('update');

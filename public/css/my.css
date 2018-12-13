@@ -1,12 +1,24 @@
 /* 0. layout            */
 /* 1. index.blade.php   */
 /* 2. post.blade.php    */
+/* 3. home.blade.php    */
 
 /* 0. layout            */
 .panel-default>.panel-heading {
    
     font-weight: bold;
     font-size: 24px;
+}
+pre {
+    white-space: pre-wrap ;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+a:hover {
+    text-decoration: none;
 }
 /* 1. index.blade.php   */
 p.post { 
@@ -18,10 +30,11 @@ p.post {
     width: 100%;
     margin: 0 0 8px 0;
 }
-.post-form input[type="textarea"] {
+textarea {
     height: 160px;
     width: 100%;
     margin: 0 0 8px 0;
+    border: 1px solid #dfdfdf;
 }
 .post-form input[type="file"] {
     margin: 0 0 8px 0;
@@ -32,3 +45,41 @@ p.post {
     text-align: right;
     
 }
+
+/* 3. home.blade.php */
+.panel-heading {
+    height: 60px;
+    display: flex;
+}
+.panel-heading h2 {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 3.5px;
+}
+.panel-heading a {
+    line-height: 46px;
+    text-align: right;
+    width: 100%;
+    transition: 0.5s;
+}
+.inner-body {
+    margin: 24px;
+    border: 1px solid #d9edf7;
+    border-radius: 5px;
+    padding: 0px 12px;
+    display: flex;
+}
+.post-left h3 {
+    margin-top: 0;
+}
+/* .post-left {
+    width: 48%;
+    margin: 0 auto;
+}
+.post-left h3 {
+    margin-top: 0;
+}
+.post-right {
+    width: 48%;
+    margin :0 auto;
+} */

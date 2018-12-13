@@ -13,11 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                       <form class="post-form" action="" method="post" enctype="multipart/form-data">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                            </div>
+                        @endif
+                       <form class="post-form" action="store" method="post" enctype="multipart/form-data">
+                       {{ csrf_field() }}
                            <p>Title</p>
                            <p><input type="text" name="title"></p>
                            <p>Content</p>
-                           <p><input type="textarea" name="content"></p>
+                           <p><textarea name="content"></textarea></p>
                            <p>Image</p>
                            <p><input type="file" name="img"></p>
                            <p class="submit"><input type="submit" value="投稿する"></p>
