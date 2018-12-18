@@ -6,9 +6,8 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
             <div class="panel-heading">
-                <h2>Dashboard</h2>
-            </div>
-
+                <h2>Comment board</h2>
+                </div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -24,16 +23,15 @@
                             </ul>
                             </div>
                         @endif
-                       <form class="post-form" action="store" method="post" enctype="multipart/form-data">
+                       
+                       <form class="post-form" action="{{route('commentup')}}" method="POST">
+                       <input type="hidden" name="id" value="{{$post->id}}" />
                        {{ csrf_field() }}
-                           <p>Title</p>
-                           <p><input type="text" name="title" value="{{ $post->title }}"></p>
-                           <p>Content</p>
-                           <p><textarea name="content" value="{{ $post->body }}"></textarea></p>
-                           <p>Image</p>
-                           <p><input type="file" name="img"></p>
-                           
-                           <p class="submit"><input type="submit" value="編集する"></p>
+                           <p>Comment</p>
+                           <p><textarea name="comment"></textarea></p>
+                          
+                           <p class="submit">
+                           <input type="submit" value="コメントする"></p>
                        </form>
                    
                 </div>

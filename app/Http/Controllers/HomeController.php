@@ -32,9 +32,17 @@ class HomeController extends Controller
         ->orderBy('image', 'desc')
         ->get();
         
-    
+        $comments = DB::table('comments')
+        ->orderBy('id', 'desc')
+        ->orderBy('body', 'desc')
+        ->orderBy('postid','desc')
+        ->get();
         
-        return view('home',['posts' => $posts]);
+        return view('home',['posts' => $posts],['comments' => $comments]);
         
+    }
+    public function cancel(Request $request) {
+
+        return redirect()->route('home');
     }
 }

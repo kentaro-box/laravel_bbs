@@ -5,8 +5,9 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Bulletin Board</div>
-
+            <div class="panel-heading">
+                <h2>Post board</h2>
+                </div>
                 <div class="panel-body">
                     @if (session('status'))
                         <div class="alert alert-success">
@@ -30,7 +31,9 @@
                            <p><textarea name="content"></textarea></p>
                            <p>Image</p>
                            <p><input type="file" name="img"></p>
-                           <p class="submit"><input type="submit" value="投稿する"></p>
+                           <p class="submit">
+                           <a href="/cancel">キャンセル</a>
+                           <input type="submit" value="投稿する"></p>
                        </form>
                    
                 </div>

@@ -11,6 +11,7 @@
 }
 pre {
     white-space: pre-wrap ;
+    margin: 24px 0 11px 0;
 }
 
 a {
@@ -29,6 +30,7 @@ p.post {
 .post-form input[type="text"] {
     width: 100%;
     margin: 0 0 8px 0;
+    height: 32px;
 }
 textarea {
     height: 160px;
@@ -71,6 +73,28 @@ textarea {
 }
 .post-left h3 {
     margin-top: 0;
+}
+.post-left a {
+    float: right;
+    padding: 8px;
+  }
+.clear {
+    clear: both;
+}
+.submit a{
+    padding: 8px;
+}
+
+.flex {
+ display: flex;
+ justify-content: space-between;
+}
+p.right {
+    line-height: 2.4;
+}
+.comment {
+    width: 90%;
+    margin: 0 auto;;
 }
 /* .post-left {
     width: 48%;

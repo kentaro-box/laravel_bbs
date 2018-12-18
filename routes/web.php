@@ -16,8 +16,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','HomeController@index')->name('home');
 
+Route::get('/cancel','HomeController@cancel')->name('cancel');
 
 Route::get('/logout', function(){
     Auth::logout();
@@ -31,4 +32,8 @@ Route::post('store','BbsController@store');
 Route::get('/delete/{id}','BbsController@delete')->name('delete');
 
 Route::get('/preview/{post}','BbsController@preview')->name('preview');
-Route::post('/update/{id}','BbsController@update')->name('update');
+Route::post('/update/{post}','BbsController@update')->name('update');
+
+Route::get('/comment/{post}','BbsController@comment')->name('comment');
+Route::post('/commentup','BbsController@commentup')->name('commentup');
+
